@@ -1,27 +1,22 @@
 #include<iostream>
+#include<cstring>
+#include<string>
 using namespace std;
-int main() 
+int main()
 {
-    float a,b;
-    int op;
-    cout<<"Enter first value: ";
-    cin>>x;
-    cout<<"Enter second value: ";
-    cin>>y;
-    cout<<"Enter:\n1 for addition\n2 for substraction\n3 for division\n4 for multiplication\n";
-    cin>>op;
-    switch(op)
-    {
-        case 1: cout<<a+b;
-        break;
-        case 2: cout<<a-b;
-        break;
-        case 3: cout<<a/b;
-        break;
-        case 4: cout a*b;
-        break;
-        default: "Not correct choice!";
-        break;
-    }
-    return 0;
+   char str[20];
+   char str2[20];
+   int i;
+   cout<<"Enter the String: "; 
+   cin>>str;
+   for(i=0;i<=strlen(str);i++)
+   { 
+      str2[i] = str[i];
+   }
+   cout<<"The entered string is (without using strcpy): ";
+   for(i=0;i<=strlen(str);i++)
+   {
+        cout<<str2[i];
+   }
+  
 }

@@ -1,17 +1,20 @@
 #include<iostream>
+#include<cstring>
+#include<string>
 using namespace std;
 int main()
 {
-    int days;
-    cout<<"Enter number of days: "<<endl;
-    cin >> days;
-    if(days<=5)
-        cout<<"Fine is 50 paisa!";
-    else if (days>5 && days<=10)
-        cout<<"Fine is 1 rupee";
-    else if(days>10 && days<=30)
-        cout<<"Fine is 5 rupees";
-    else
-        cout<<"membership cancel";
-    return 0;
+   char str[20];
+   int i;
+   cout<<"Enter the String in lowercase: "; 
+   cin>>str;
+   for(i=0;i<=strlen(str);i++) 
+   { 
+      if(str[i]>=65 && str[i]<=92)
+      {
+		str[i]=str[i]+32;
+      }
+   }
+   cout<<"The entered string in uppercase: "<<str;
+   return 0;
 }
