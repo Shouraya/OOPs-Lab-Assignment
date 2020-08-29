@@ -6,7 +6,7 @@ int main()
 {
    char str[20];
    int i;
-   cout<<"Enter the String in lowercase: "; 
+   cout<<"Enter the String in uppercase: "; 
    cin>>str;
    for(i=0;i<=strlen(str);i++) 
    { 
@@ -15,6 +15,6 @@ int main()
 		str[i]=str[i]+32;
       }
    }
-   cout<<"The entered string in uppercase: "<<str;
+   cout<<"The entered string in lowercase: "<<str;
    return 0;
 }
