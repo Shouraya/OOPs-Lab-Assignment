@@ -5,9 +5,9 @@ int main()
     float a,b;
     int op;
     cout<<"Enter first value: ";
-    cin>>x;
+    cin>>a;
     cout<<"Enter second value: ";
-    cin>>y;
+    cin>>b;
     cout<<"Enter:\n1 for addition\n2 for substraction\n3 for division\n4 for multiplication\n";
     cin>>op;
     switch(op)
@@ -18,7 +18,7 @@ int main()
         break;
         case 3: cout<<a/b;
         break;
-        case 4: cout a*b;
+        case 4: cout<<a*b;
         break;
         default: "Not correct choice!";
         break;
