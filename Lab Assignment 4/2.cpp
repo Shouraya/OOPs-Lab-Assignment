@@ -1,52 +1,65 @@
 #include <iostream>
 using namespace std;
-// Declaring Class
-class account{
+class bank
+{
+	int acc_num;
 	char name[20];
-	long int ac_num;
-	char type;
-	float balance;
-	
-	public:
-		void getdata()
+	char type[20];
+	int bal;
+
+public:
+	void assign()
+	{
+		cout<<"Name of depositor: ";
+		cin>>name;
+		cout<<"Account number: ";
+		cin>>acc_num;
+		cout<<"Type of account: ";
+		cin>>type;
+		cout<<"Enter amount: ";
+		cin>>bal;
+	}
+	void deposit()
+	{
+		int mon;
+		cout<<endl<<"Amount to deposit money: ";
+		cin>>mon;
+		bal+=mon;
+		cout<<"Balance after Deposit: " <<bal<< endl;
+	}
+	void withdraw()
+	{
+		int wit;
+		cout<<endl<<"withdraw money: ";
+		cin>>wit;
+		bal = bal - wit;
+		if (wit > bal)
 		{
-			cout<<"Enter Name of Account holder";
-			cin>>name;
-			cout<<endl<<"Enter Account number";
-			cin>>ac_num;
-			cout<<endl<<"Enter Type of Account";
-			cin>>type;
-			cout<<endl<<"Enter Balance of Account";
-			cin>>balance;
+			cout << "Insufficient Balance !";
 		}
-		void deposit()
-		{	
-			float dep;
-			cout<<endl<<"Enter the amount you wish to Deposit";
-			cin>>dep;
-			balance+=dep;
-		}
-		void withdraw()
-		{	
-			float wid; int ch;
-			cout<<endl<<"Current Balance: "<<balance<<"Press 1 If you still wish to proceed with withdrawl";
-			cin>>ch;
-			{
-				cout<<endl<<"Enter the amount you wish to withdraw";
-				cin>>wid;
-				balance-=wid;
-			}
-		}
-		void printdata()
+		else
 		{
-			cout<<"Account Details:"<<endl<<"*****************"<<endl<<"Account Number: "<<ac_num<<endl<<"Name:  "<<name<<endl<<"Type:  "<<type<<endl<<"Balance: "<<balance;
+			cout<<"Balance after withdrawal: "<< bal<< endl;
 		}
+	}
+	void display()
+	{
+		if (bal < 0)
+		{
+			cout << endl<<"Name: "<<name<< endl<<"Amount Can't be withdrawn";
+		}
+		else
+		{
+			cout<<endl<<"Name: " <<name << endl<< "Balance: " <<bal;
+		}
+	}
 };
 int main()
 {
-	account obj; 				//Object of class account
-	obj.getdata();				//Input data
-	obj.deposit();			   	//Deposit Amount
-	obj.withdraw();			  	//Withdraw Amount
-	obj.printdata(); 		 	//Display Amount
+	bank mem;
+	mem.assign();
+	mem.deposit();
+	mem.withdraw();
+	mem.display();
+	return 0;
 }

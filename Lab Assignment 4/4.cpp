@@ -14,10 +14,12 @@ class rectangle{
 		float perimeter()
 		{
 			cout<<"The perimeter for entered dimensions is: "<<2*(length+width)<<endl;
+			return 0;
 		}
 		float area()
 		{
 			cout<<"The area for entered dimensions is: "<<length*width<<endl;
+			return 0;
 		}
 };
 int main()

@@ -27,5 +27,6 @@ void sum(int *a,int n)
 	{
 		sum=sum + *(a+i);
 	}
-	cout<<"\nSum is "<<sum;
+	cout<<"\nSum is "<<sum<<endl;
+	cout<<"Base adress is: "<<a;
 }
