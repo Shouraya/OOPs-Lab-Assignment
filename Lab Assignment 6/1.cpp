@@ -28,6 +28,6 @@ int main()
 {
     stud s1;
     s1.get();
-    cout<<sum(s1);
+    cout<<"The mean is: "<<sum(s1);
     return 0;
 }   

@@ -9,9 +9,9 @@ private:
 public:
     void getdata()
     {
-        cout<<"Enter first number of element = ";
+        cout<<"Enter first number : ";
         cin>>n;
-        cout<<"\nEnter second number of element = ";
+        cout<<"\nEnter second number : ";
         cin>>a;
 
     }
@@ -19,7 +19,7 @@ public:
 };
  void greatest(mean d)
  {
-     cout<<"\n\nDISPLAY AND SUM USING FRIEND FUNCATION ";
+     cout<<"\n\n**************************************\nDISPLAY AND SUM USING FRIEND FUNCATION\n**************************************\n ";
      cout<<"\n\nFIRST NUMBER = "<<d.n<<"\n\nSECOUND NUMBER = "<<d.a;
      int sum =0;
      sum=d.a+d.n;

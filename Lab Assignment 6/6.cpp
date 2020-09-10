@@ -9,7 +9,7 @@ private:
 public:
     void getdata()
     {
-        cout<<"Enter first number of element = ";
+        cout<<"Enter first number : ";
         cin>>n;
     }
     friend void greatest(first d,secound x);
@@ -21,7 +21,7 @@ private:
 public:
     void getdata2()
     {
-        cout<<"\nEnter second number = ";
+        cout<<"\nEnter second number : ";
         cin>>a;
     }
     friend void greatest(first d,secound x);
@@ -29,9 +29,9 @@ public:
  void greatest(first d,secound x)
  {
      if(x.a>d.n)
-        cout<<"\nEntered number  from secound  class a"<<x.a<<" is greater than from first class b "<<d.n;
+        cout<<"\nEntered number  from secound  class ("<<x.a<<") is greater than that from first class ("<<d.n<<")";
      else
-        cout<<"\nEntered number first class b "<<d.n<<" is greater than from second class a "<<x.a;
+        cout<<"\nEntered number from first class ("<<d.n<<") is greater than that from second class ("<<x.a<<")";
  }
  int main()
  {
@@ -40,7 +40,6 @@ public:
      d.getdata();
      x.getdata2();
      greatest(d,x);
-
      return 0;
  }
 
