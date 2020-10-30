@@ -1,32 +1,31 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class alpha
-{
-    int a,b,temp;
-   public:
-   	
-    void get()
-    {	cout<<"enter both numbers: ";
-    	cin>>a>>b;
-    }
-    
-    friend void swap(alpha &ob);
-    void display(){
-    	cout << "After swap values are "<< a<<" "<<b;
-	}
+class complex{
+	float a,b;
+	public:
+		complex(float x,float y)
+		{
+			a=x;
+			b=y;
+		}
+		complex(){}
+		friend complex add(complex,complex);
+		void display()
+		{
+			cout<<"Sum is "<<a<<" + i"<<b;
+		}
 };
-void swap(alpha &ob)
-{	
-	ob.temp=ob.a;
-	ob.a=ob.b;
-	ob.b=ob.temp;
-
+complex add(complex x,complex y)
+{
+	complex t;
+	t.a=x.a+y.a ;
+	t.b=x.b+y.b;
+	return t;
 }
 int main()
 {
-    alpha obj;
-    obj.get();
-    swap(obj);
-    obj.display();
-    return 0;
+	complex c1(3,4),c2(4.5,6.7),c3;
+	c3=add(c1,c2);
+	c3.display();
+	return 0;
 }

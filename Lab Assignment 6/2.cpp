@@ -1,36 +1,71 @@
 #include<iostream>
 using namespace std;
-class great {
-    int a,b;
+class matrix{
+    private:
+        int m,n;
+        int **p;
     public:
-    void get(int x, int y);
-    friend int check(great G);
-
+        matrix(){
+            cout<<"Enter the number of rows and columns of the matrix."<<endl;
+            cin>>m>>n;
+            p=new int *[m];
+            for(int i=0;i<m;i++)
+            {
+            p[i]=new int[n];
+            }
+         }
+        void display(){
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                cout<<p[i][j]<<"\t";
+            }
+            cout<<endl;
+            }
+            cout<<endl<<endl;
+            }
+        int row(){
+            return n;
+        }
+        int col(){
+            return m;
+        }
+        int** mat(){
+            return p;
+        }
+        void getdata(){
+            cout<<"Enter the array elements."<<endl;
+            for(int i=0;i<m;i++){
+                for(int j=0;j<n;j++){
+                    cin>>p[i][j];
+                }
+            }
+}
+    friend matrix operator*(matrix obj);
 };
-void great::get(int x, int y){
-    a=x;
-    b=y;
+matrix operator*(matrix obj1,matrix obj2){
+    matrix res;
+    int r1=obj1.row();
+    int c2=obj2.col();
+    int c1=obj1.col();
+    int **a=obj1.mat();
+    int **b=obj2.mat();
+    int **result=res.mat();
+    for(int i = 0; i < r1; ++i)
+        for(int j = 0; j < c2; ++j)
+            for(int k = 0; k < c1; ++k){
+                result[i][j] += a[i][k] * b[k][j];
+            }
+            return res;
 }
-int check(great G)
-{
-    if(G.a>G.b)
-    {
-        cout<<"a is greater";
-    }
-    else if(G.a==G.b)
-    {
-        cout<<"Both are equal!";
-    }
-    else
-    {
-        cout<<"b is greater";
-    }
-    return 0;
-}
-int main()
-{
-    great G1;
-    G1.get(3,4);
-    cout<<check(G1);
-    return 0;
+int main(){
+    matrix a;
+    a.getdata();
+    matrix b;
+    b.getdata();
+    a.display();
+    b.display();
+    matrix result;
+    result=a*b;
+    cout<<endl<<"Matrix after multiplication : "<<endl;
+    result.display();
 }

@@ -1,46 +1,25 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class secound;
-
-class first
-{
-private:
-    int n;
-public:
-    void getdata()
-    {
-        cout<<"Enter first number : ";
-        cin>>n;
-    }
-    friend void greatest(first d,secound x);
+class complex {
+    int a,b;
+	public:
+	    void getvalue(){
+	        cout<<"Enter the complex number:";
+	        cin>>a>>b;
+	    }
+	    void operator++(){
+	        a=++a;
+	        b=++b;
+	    }
+	    void display(){
+	        cout<<a<<" + i"<<b<< endl;
+	    }
 };
-class secound
-{
-private:
-    int a;
-public:
-    void getdata2()
-    {
-        cout<<"\nEnter second number : ";
-        cin>>a;
-    }
-    friend void greatest(first d,secound x);
-};
- void greatest(first d,secound x)
- {
-     if(x.a>d.n)
-        cout<<"\nEntered number  from secound  class ("<<x.a<<") is greater than that from first class ("<<d.n<<")";
-     else
-        cout<<"\nEntered number from first class ("<<d.n<<") is greater than that from second class ("<<x.a<<")";
- }
- int main()
- {
-     first d;
-     secound x;
-     d.getdata();
-     x.getdata2();
-     greatest(d,x);
-     return 0;
- }
-
-
+int main(){
+    complex c1;
+    c1.getvalue();
+    ++c1;
+    cout<<"Incremented Complex Number\n";
+    c1.display();
+    return 0;
+}

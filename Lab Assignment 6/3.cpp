@@ -1,49 +1,31 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <math.h>
 using namespace std;
-class student_detail
-{
-private:
-    string name;
-    int roll_no;
-    string class_section;
-    float total_marks;
-public:
-    void get_detail()
-    {
-        cout<<"Enter student details: "<<endl<<"Enter name : "<<endl;
-        cin>>name;
-        cout<<endl<<"Enter roll = ";
-        cin>>roll_no;
-        cout<<endl<<"Enter class = ";
-        cin>>class_section;
-        cout<<endl<<"Enter total marks = ";
-        cin>>total_marks;
-    }
-   friend void display(student_detail d);
+class triangle{
+	public:
+		void area(int l,int h)
+		{
+			float c=0.5*l*h;
+			cout<<"area of right angled triangle: "<<c;
+		}
+		void area(int z)
+		{
+			float x=(sqrt(3)/4)*z*z;
+			cout<<"area of equilateral triangle: "<<x;
+		}
+		void area(int f,int g,int h)
+		{
+			float alt=sqrt(pow(f,2) - (pow(g,2)/4));
+			float ar=0.5*g*h;
+			cout<<"area of isoceles triangle: "<<ar;
+		}
 };
-void display(student_detail d)
-{   
-        cout<<endl<<"**************************************"<<endl;
-        cout<<"STUDENT DETAILS: "<<endl<<"Name = "<<d.name<<endl<<"Roll Number = "<<d.roll_no<<endl<<"Class = "<<d.class_section<<endl<<"Total Marks = "<<d.total_marks;
-        cout<<endl<<"**************************************"<<endl;
-}
 int main()
 {
-    int n;
-    cout<<"Enter the number of students = ";
-    cin>>n;
-    student_detail s1[n];
-    for(int i=0;i<n;i++)
-    {
-        cout<<endl;
-        s1[i].get_detail();
-    }
-    for(int i=0;i<n;i++)
-    {
-        cout<<endl;
-        display(s1[i]);
-    }
-    return 0;
-
+	triangle a;
+	a.area(4);
+	cout<<"\n";
+	a.area(3,4);
+	cout<<"\n";
+	a.area(3,4,5);
 }
