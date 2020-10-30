@@ -1,39 +1,49 @@
-#include<iostream>
-#include<cstdlib>
+#include <iostream>
 #include<string.h>
 using namespace std;
-	class strng{
-		char str[20];
-		public:
-		void get(){
-		cout<<endl<<"Enter string ";
-		cin>>str;
+class string{
+	char s[20];
+	public:
+		void getstring()
+		{
+			cin>>s;
 		}
-		void display(){
-			cout<<endl<<str;
+		int operator==(string s1)
+		{
+			if(strcmp(this->s,s1.s)==0)
+				return 1;
+			else
+			{
+				return 0;
+			}
 		}
-		int operator==(strng obj2){
-			return(strcmp(this->str,obj2.str));
-		}
-		strng operator+(strng obj2){
-			strng temp;
-			strcpy(this->str,temp.str);
-			strcat(temp.str,obj2.str);
+		string operator+(string s1)
+		{
+			string temp;
+			strcpy(temp.s,this->s);
+			strcat(temp.s,s1.s);
 			return temp;
 		}
-	};
+		void display()
+		{
+			cout<<s;
+		}
+};
 int main()
 {
-	strng obj1,obj2;
-	obj1.get();
-	obj2.get();
-	if((obj1==obj2)==0)
-	cout<<endl<<"They are Equal";
+	::string s1,s2,s3;
+	cout<<"Enter first string: ";
+	s1.getstring();
+	cout<<"Enter second string: ";
+	s2.getstring();
+	if(s1==s2)
+	{
+		cout<<"Strings are equal.";
+	}
 	else
-	cout<<endl<<"They are not Equal";
-	strng sum;
-	sum=obj1+obj2;
-	cout<<endl<<"String after concatination: ";
-	sum.display();
-	return 1;
+		cout<<"Strings are not equal.";
+	s3=s1+s2;
+	cout<<"\nAfter concatenation: ";
+	s3.display();
+	return 0;
 }
